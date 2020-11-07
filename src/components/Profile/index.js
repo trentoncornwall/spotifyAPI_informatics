@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Me from "./Me";
+import spotify from "../../util/spotify";
+
 export default class Profile extends Component {
   constructor() {
     super();
@@ -9,35 +11,18 @@ export default class Profile extends Component {
     };
   }
 
-  getSpotyifyTest = (token) => {
-    fetch("https://api.spotify.com/v1/me/tracks", {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("Success:", data);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
-
-  getUserInfo = (token) => {
-    fetch("https://api.spotify.com/v1/me", {
-      headers: { Authorization: `Bearer ${token}` },
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        this.setState({
-          userInfo: data,
-        });
-        console.log("Success:", data);
-        this.getSpotyifyTest(token);
-      })
-      .catch((error) => {
-        console.error("Error:", error);
-      });
-  };
+  // getSpotyifyTest = (token) => {
+  //   fetch("https://api.spotify.com/v1/me/tracks", {
+  //     headers: { Authorization: `Bearer ${token}` },
+  //   })
+  //     .then((response) => response.json())
+  //     .then((data) => {
+  //       console.log("Success:", data);
+  //     })
+  //     .catch((error) => {
+  //       console.error("Error:", error);
+  //     });
+  // };
 
   componentDidMount() {
     this.setState(
@@ -45,7 +30,9 @@ export default class Profile extends Component {
         token: this.props.token,
       },
       () => {
-        this.getUserInfo(this.state.token);
+        spotify.getUserInfo(this.state.token).then((data) => {
+          console.log("after the promise ", data);
+        });
       }
     );
   }
