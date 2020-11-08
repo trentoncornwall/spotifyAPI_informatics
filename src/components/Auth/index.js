@@ -6,7 +6,7 @@ export default function Auth({ receivedToken }) {
   return (
     <SpotifyAuth
       redirectUri="http://localhost:3000/"
-      clientID=""
+      clientID="e87611ada5e2402b9fc4f7c34d6bc9da"
       scopes={['user-read-email', 'user-read-private', 'user-top-read', 'user-read-recently-played']}
       onAccessToken={receivedToken}
     />
