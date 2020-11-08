@@ -1,5 +1,5 @@
 import React from "react";
-import { SpotifyAuth, Scopes } from "react-spotify-auth";
+import { SpotifyAuth } from "react-spotify-auth";
 import "react-spotify-auth/dist/index.css";
 
 export default function Auth({ receivedToken }) {
@@ -7,7 +7,7 @@ export default function Auth({ receivedToken }) {
     <SpotifyAuth
       redirectUri="http://localhost:3000/"
       clientID=""
-      scopes={[Scopes.userReadPrivate, Scopes.userReadEmail]}
+      scopes={['user-read-email', 'user-read-private', 'user-top-read', 'user-read-recently-played']}
       onAccessToken={receivedToken}
     />
   );
