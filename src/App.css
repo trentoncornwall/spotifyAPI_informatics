@@ -27,7 +27,7 @@
   /* Convert spotify logo to white */
   padding: 0.25rem 0.5rem;
   height: 1.5rem;
-  fill: #fff;
+  fill: rgb(231, 231, 231);
   width: 2em;
 }
 
@@ -35,7 +35,7 @@
   min-height: 100vh;
   margin: 0 auto;
   max-width: 1075px;
-  background-color: rgb(245, 245, 245);
+  background-color: rgb(248, 248, 248);
 }
 * {
   font-family: "Assistant", sans-serif;

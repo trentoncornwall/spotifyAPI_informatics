@@ -16,7 +16,14 @@ export default function Track({track, token}) {
 
     return (
         <div className="trackContainer">
-               {!fullTrack.analysis ? <p>Loading... </p> : <p>{fullTrack.name}{console.log(fullTrack)}</p>}
+               {!fullTrack.analysis ? <p>Loading... </p> : 
+               <ul>
+                   <li>{fullTrack.name}</li>
+                   {fullTrack.artists.map(artist => {
+                       <li>{artist.name}</li>
+                   })}
+               </ul>
+               }
         </div>
   );
 }

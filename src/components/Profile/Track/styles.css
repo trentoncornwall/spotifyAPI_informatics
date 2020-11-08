@@ -1,7 +1,7 @@
 .trackContainer {
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   max-width: 100%;
   padding: 1em 0.3em;
-  border: 1px black solid;
+  border: 1px rgb(5, 159, 219) solid;
   margin-bottom: 0.3em;
 }
