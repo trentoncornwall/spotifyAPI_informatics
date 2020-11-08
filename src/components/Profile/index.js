@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./styles.css"
 import Me from "./Me";
 import Track from "./Track"
 import spotify from "../../util/spotify";

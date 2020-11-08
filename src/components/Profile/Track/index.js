@@ -1,4 +1,5 @@
 import React, {useEffect, useState} from "react";
+import "./styles.css"
 import spotify from "../../../util/spotify"
 
 export default function Track({track, token}) {
@@ -10,11 +11,11 @@ export default function Track({track, token}) {
             .then(data => { setAnalysis({...track, analysis: {...data}})})
         }
         getAnalysist()
-    },[])
+    },[track, token])
     
 
     return (
-        <div>
+        <div className="trackContainer">
                {!fullTrack.analysis ? <p>Loading... </p> : <p>{fullTrack.name}{console.log(fullTrack)}</p>}
         </div>
   );

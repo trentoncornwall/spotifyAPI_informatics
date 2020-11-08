@@ -1,6 +1,6 @@
 /* add css module styles here (optional) */
-@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
-
+/* @import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap"); */
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&display=swap");
 ._3xrlJ {
   transition-duration: 300ms;
   font-family: "Rubik", Arial, Helvetica, sans-serif;
@@ -29,4 +29,21 @@
   height: 1.5rem;
   fill: #fff;
   width: 2em;
+}
+
+.App {
+  min-height: 100vh;
+  margin: 0 auto;
+  max-width: 1075px;
+  background-color: rgb(245, 245, 245);
+}
+* {
+  font-family: "Assistant", sans-serif;
+}
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.3rem;
 }
