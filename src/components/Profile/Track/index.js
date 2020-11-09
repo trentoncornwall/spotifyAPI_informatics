@@ -17,12 +17,14 @@ export default function Track({track, token}) {
     return (
         <div className="trackContainer">
                {!fullTrack.analysis ? <p>Loading... </p> : 
-               <ul>
-                   <li>{fullTrack.name}</li>
-                   {fullTrack.artists.map(artist => {
-                       <li>{artist.name}</li>
-                   })}
+            <div className="fullTrack"> 
+                <img className="albumCover" src={fullTrack.album.images[1].url} />
+               <ul className="trackInfo">
+                    {console.log(fullTrack)}
+                   <li className='trackName'>{fullTrack.name}</li>
+                   <li className='artistName'>{fullTrack.artists.map((artist, index) => artist.name +  (index + 1 < fullTrack.artists.length ? ', ' : ' '))}</li>
                </ul>
+            </div>
                }
         </div>
   );

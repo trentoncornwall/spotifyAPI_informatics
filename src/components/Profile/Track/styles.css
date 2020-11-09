@@ -1,7 +1,37 @@
 .trackContainer {
   background-color: rgb(255, 255, 255);
-  max-width: 100%;
   padding: 1em 0.3em;
-  border: 1px rgb(5, 159, 219) solid;
-  margin-bottom: 0.3em;
+  margin: 1em 2em 0.5em 2em;
+  min-width: 400px;
+}
+
+.trackName {
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 0.05em;
+  line-height: 2em;
+}
+
+.fullTrack {
+  display: grid;
+  grid-template-columns: 300px auto;
+  grid-template-areas: "cover track";
+}
+
+.trackInfo {
+  grid-area: track;
+  justify-self: start;
+  padding-left: 1em;
+}
+
+.albumCover {
+  grid-area: cover;
+}
+
+@media only screen and (max-width: 600px) {
+  .fullTrack {
+    display: flex;
+    max-width: 300px;
+    flex-direction: column;
+  }
 }
