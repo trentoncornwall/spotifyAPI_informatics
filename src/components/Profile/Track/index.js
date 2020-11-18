@@ -5,6 +5,8 @@ import spotify from "../../../util/spotify"
 export default function Track({track, token}) {
     const [fullTrack, setAnalysis] = useState(track)
 
+
+
     useEffect(()=>{
         const getAnalysist = () => {
              spotify.getTrackAnalysis(token, track.id)
@@ -12,7 +14,10 @@ export default function Track({track, token}) {
         }
         getAnalysist()
     },[track, token])
-    
+
+    // playAudio = (aduio) => {
+
+    // }
 
     return (
         <div className="trackContainer">
@@ -23,6 +28,7 @@ export default function Track({track, token}) {
                     {console.log(fullTrack)}
                    <li className='trackName'>{fullTrack.name}</li>
                    <li className='artistName'>{fullTrack.artists.map((artist, index) => artist.name +  (index + 1 < fullTrack.artists.length ? ', ' : ' '))}</li>
+                    {/* <li onClick={(event)=> {}}> PLAY <audio></audio></li> */}
                </ul>
             </div>
                }
